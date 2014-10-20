@@ -5,11 +5,13 @@ robohub && (robohub.api = {
             for (i in robohub.api.helpText) {
                 helpString += i + ' - ' + robohub.api.helpText[i] + '\n';
             }
-            kernel.echo(helpString.slice(0, -1));
-            return 'help - for help'
+            return helpString.slice(0, -1);
         }
     },
     helpText: {
         map: 'show map'
+    },
+    map: function () {
+        return robohub.game.stageToString();
     }
 });
