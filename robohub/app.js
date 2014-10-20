@@ -1,5 +1,8 @@
 var robohub = {};
 
 robohub.app = {
-    start: function () {}
+    start: function () {
+        this.apiRegistration();
+    },
+    apiRegistration: function () {}
 };
