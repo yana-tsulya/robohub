@@ -12,5 +12,6 @@ robohub.app = {
     apiRegistration: function () {
         window.help = robohub.api.help;
         window.map = robohub.api.map;
+        window.legend = robohub.api.legend;
     }
 };

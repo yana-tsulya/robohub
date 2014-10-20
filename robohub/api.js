@@ -9,9 +9,13 @@ robohub && (robohub.api = {
         }
     },
     helpText: {
-        map: 'show map'
+        map: 'show map',
+        legend: 'legend for map'
     },
     map: function () {
         return robohub.game.stageToString();
+    },
+    legend: function () {
+        return config.strings.legendText;
     }
 });
