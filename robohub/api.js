@@ -17,5 +17,8 @@ robohub && (robohub.api = {
     },
     legend: function () {
         return config.strings.legendText;
+    },
+    top: function () {
+        return robohub.game.robot.top();
     }
 });
