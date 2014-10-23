@@ -13,6 +13,10 @@ robohub.app = {
         window.help = robohub.api.help;
         window.map = robohub.api.map;
         window.legend = robohub.api.legend;
-        window.forward = robohub.api.top;
+        window.hint = robohub.api.hint;
+        window.top = robohub.api.top;
+        window.right = robohub.api.right;
+        window.bottom = robohub.api.bottom;
+        window.left = robohub.api.left;
     }
 };
