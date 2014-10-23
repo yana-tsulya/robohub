@@ -66,5 +66,19 @@ robohub && (robohub.game = {
     },
     isFinish: function (tile) {
         return tile == '*';
+    },
+    getCoordinatesByDirections: function (directions) {
+        if (directions == 'north') {
+            return {x: this.robot.x, y: this.robot.y-1};
+        }
+        if (directions == 'east') {
+            return {x: this.robot.x+1, y: this.robot.y};
+        }
+        if (directions == 'south') {
+            return {x: this.robot.x, y: this.robot.y+1};
+        }
+        if (directions == 'west') {
+            return {x: this.robot.x-1, y: this.robot.y};
+        }
     }
 });

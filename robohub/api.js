@@ -11,10 +11,11 @@ robohub && (robohub.api = {
     helpText: {
         map: 'show map',
         legend: 'legend for map',
-        top: 'move forward',
-        right: 'move right',
-        bottom: 'move back',
-        left: 'move left'
+        north: 'move forward',
+        east: 'move right',
+        south: 'move back',
+        west: 'move left',
+        isFree: 'say what direction you want check'
     },
     map: function () {
         return robohub.game.stageToString();
@@ -24,6 +25,9 @@ robohub && (robohub.api = {
     },
     legend: function () {
         return config.strings.legendText;
+    },
+    restart: function () {
+        return robohub.game.initLevel(robohub.game.currLevel);
     },
     top: function () {
         return robohub.game.robot.top();
@@ -36,5 +40,9 @@ robohub && (robohub.api = {
     },
     left: function () {
         return robohub.game.robot.left();
+    },
+    isFree: function (direction) {
+        var coordinates = robohub.game.getCoordinatesByDirections(direction);
+        return robohub.game.isMoveble(robohub.game.stage[coordinates.y][coordinates.x]);
     }
 });
