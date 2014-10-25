@@ -18,8 +18,10 @@ robohub && (robohub.game = {
         move: function (x, y) {
             if(robohub.game.isFinish(robohub.game.stage[y][x])) {
                 kernel.echo(config.strings.win);
-                robohub.game.initLevel(robohub.game.currLevel+1);
-                return true;
+                if (robohub.game.initLevel(robohub.game.currLevel+1)) {
+                    return 'next';
+                }
+                return 'end';
             }
             if(robohub.game.isMoveble(robohub.game.stage[y][x])) {
                 this.x = x;
@@ -43,8 +45,10 @@ robohub && (robohub.game = {
             this.hint = robohub.levels[number].hint;
             this.robot.x = robohub.levels[number].startPosition[1];
             this.robot.y = robohub.levels[number].startPosition[0];
+            return true;
         } else {
             kernel.echo(config.strings.end);
+            return false;
         }
     },
     stageToString: function () {
