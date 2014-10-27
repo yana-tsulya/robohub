@@ -46,3 +46,7 @@ robohub && (robohub.api = {
         return robohub.game.isMoveble(robohub.game.stage[coordinates.y][coordinates.x]);
     }
 });
+robohub.api.north = robohub.api.top;
+robohub.api.south = robohub.api.bottom;
+robohub.api.east = robohub.api.right;
+robohub.api.west = robohub.api.left;
