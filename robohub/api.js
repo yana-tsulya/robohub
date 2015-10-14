@@ -5,7 +5,7 @@ robohub && (robohub.api = {
             for (i in robohub.api.helpText) {
                 helpString += i + ' - ' + robohub.api.helpText[i] + '\n';
             }
-            return helpString.slice(0, -1);
+            kernel.echo(helpString.slice(0, -1));
         }
     },
     helpText: {
@@ -20,13 +20,13 @@ robohub && (robohub.api = {
         restart: 'restart'
     },
     map: function () {
-        return robohub.game.stageToString();
+        kernel.echo(robohub.game.stageToString());
     },
     hint: function () {
-        return robohub.game.hint;
+        kernel.echo(robohub.game.hint);
     },
     legend: function () {
-        return config.strings.legendText;
+        kernel.echo(config.strings.legendText);
     },
     restart: function () {
         return robohub.game.initLevel(robohub.game.currLevel);
